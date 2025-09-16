@@ -15,6 +15,9 @@ require("lazy").setup({
     spec = "theprimeagen.lazy",
     change_detection = { notify = false }
 })
+
+
+
 --[[
 require("lazy").setup({
   use("~/personal/harpoon")

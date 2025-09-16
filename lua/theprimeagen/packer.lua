@@ -7,11 +7,12 @@ return require("packer").startup(function(use)
   -- Packer can manage itself
   use "wbthomason/packer.nvim"
 
-  use {
-	  "nvim-telescope/telescope.nvim", tag = "0.1.0",
-	  -- or                            , branch = "0.1.x",
-	  requires = { {"nvim-lua/plenary.nvim"} }
-  }
+  -- BAG Orig:
+  -- use {
+  --  "nvim-telescope/telescope.nvim", tag = "0.1.0",
+  --  -- or                            , branch = "0.1.x",
+  --  requires = { {"nvim-lua/plenary.nvim"} }
+  -- }
 
   use("folke/tokyonight.nvim")
 
@@ -43,7 +44,7 @@ return require("packer").startup(function(use)
 			end,}
   use("nvim-treesitter/playground")
 
-  use("~/personal/harpoon")
+--  use("~/personal/harpoon")
 
   use("theprimeagen/vim-be-good")
   use("theprimeagen/refactoring.nvim")

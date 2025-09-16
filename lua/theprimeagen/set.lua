@@ -1,4 +1,18 @@
-vim.opt.guicursor = ""
+
+-- -----------------------------------------------
+--                  BAG KEYMAPS
+-- -----------------------------------------------
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:block,r-cr-o:block"
+-- BAG Orig:  vim.opt.guicursor = ""
+vim.opt.ignorecase = true  -- Case-insensitive search...
+vim.opt.smartcase = true   -- ...unless the search includes uppercase letters
+
+vim.opt.winwidth = 30        -- Minimum width for a window
+vim.opt.winminwidth = 10     -- Minimum width allowed for resizing
+-- -----------------------------------------------
+--              end BAG KEYMAPS
+-- -----------------------------------------------
+
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -14,10 +28,9 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
