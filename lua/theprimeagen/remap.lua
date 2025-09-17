@@ -56,6 +56,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>viam", ":tabe .<CR>")
 vim.keymap.set("n", "<leader>tabe", ":tabe<CR>")
 vim.keymap.set("n", "<leader>tele", ":Telescope<CR>")
+vim.keymap.set("n", "<leader>psh", ":!start powershell<CR>")
 vim.keymap.set("n", ",n", ":tabn<CR>")
 vim.keymap.set("n", ",b", ":tabp<CR>")
 -- BAG doesn't work, I wanted to remap "ma" to "mf" in netrw
