@@ -37,17 +37,17 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
-
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+-- Primeagen orig keymaps:
+-- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+-- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+-- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+-- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+-- vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
 -- vim.keymap.set(
 --     "n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
 -- )
+
 
 -- -----------------------------------------------
 --                  BAG KEYMAPS
@@ -123,6 +123,17 @@ vim.keymap.set("n", "<leader>search", [[y:vim /<C-R>"/ <C-R>%<CR>:cw<CR>/<C-R>"<
 
 vim.keymap.set("n", "<leader>note", ":tabe C:/Users/b.grissom/OneDrive - ELATEC Cloud Global/Documents/notes_new_laptop.md<CR>", { desc = "Open my notes" })
 vim.keymap.set("n", "<leader>nvim", ":tabe C:/Users/b.grissom/AppData/Local/nvim/lua/theprimeagen/lazy/<CR>", { desc = "Open neovim config dir" })
+
+
+
+-- Turn off auto completion
+vim.g.cmp_enabled = true
+vim.api.nvim_set_keymap('n', '<leader>noauto', [[:lua ToggleCmp()<CR>]], { noremap = true, silent = true })
+function ToggleCmp()
+  vim.g.cmp_enabled = not vim.g.cmp_enabled
+  require'cmp'.setup.buffer { enabled = vim.g.cmp_enabled }
+  print("Completion " .. (vim.g.cmp_enabled and "enabled" or "disabled"))
+end
 -- -----------------------------------------------
 --              end BAG KEYMAPS
 -- -----------------------------------------------

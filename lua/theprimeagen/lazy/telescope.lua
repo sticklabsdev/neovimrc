@@ -12,9 +12,10 @@ return {
         require('telescope').setup({
             defaults = {
                 -- layout_strategy = 'vertical',
+                path_display = { "tail" }, -- only show filename
                 layout_config = {
-                    height = 0.99,
-                    width = 0.99,
+                    height = 0.95,
+                    width = 0.95,
                     -- height = 0.95,  -- 95% of the screen height
                     -- width = 0.95,   -- 95% of the screen width
                     -- prompt_position = 'top',
@@ -27,6 +28,7 @@ return {
                     },
                 },
                 -- sorting_strategy = 'ascending',
+                -- require('telescope').setup {
             }
         })
 
@@ -42,8 +44,9 @@ return {
         --     print("Git command triggered!")
         -- end)
 
-        vim.keymap.set('n', '<leader>file', builtin.find_files, {}) -- BAG
+        vim.keymap.set('n', '<leader>file', builtin.find_files, {})
         vim.keymap.set('n', '<leader>gfile', builtin.git_files, {})
+        vim.keymap.set('n', '<leader>map', builtin.keymaps, {})
         -- -----------------------------------------------
         --                  BAG KEYMAPS
         -- -----------------------------------------------

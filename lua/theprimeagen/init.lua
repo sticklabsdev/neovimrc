@@ -3,6 +3,8 @@ require("theprimeagen.remap")
 
 require("theprimeagen.lazy_init")
 
+require('lspconfig').clangd.setup({})
+
 -- DO.not
 -- DO NOT INCLUDE THIS
 
